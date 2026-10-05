@@ -11,7 +11,18 @@ A simple Java CLI task manager built to learn and practice object-oriented progr
 - Prevent duplicate task IDs
 - Basic input validation and error handling
 
-## Concepts practiced
+## Project Structure
+
+```text
+src/
+└── main/
+    └── java/
+        ├── Main.java
+        ├── Task.java
+        └── TaskManager.java
+```
+
+## Concepts Practiced
 
 - Classes and objects
 - Constructors
