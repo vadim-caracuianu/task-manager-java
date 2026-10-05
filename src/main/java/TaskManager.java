@@ -16,8 +16,14 @@ public class TaskManager {
     tasks = new ArrayList<>();
   }
 
-  public void addTask(Task task) {
+  public boolean addTask(Task task) {
+    for (int i = 0; i < tasks.size(); i++) {
+      if (tasks.get(i).getId() == task.getId()) {
+        return false;
+      }
+    }
     tasks.add(task);
+    return true;  
   }
 
   public void listTasks() {
@@ -34,8 +40,27 @@ public class TaskManager {
         return task;
       }
     }
-
     return null;
+  }
+
+  public boolean completeTask(int id) {
+    Task task = findTask(id);
+
+    if (task != null) {
+      task.complete();
+      return true;
+    }
+    return false;
+  }
+
+public boolean deleteTask(int id) {
+   Task task = findTask(id);
+
+    if (task != null) {
+      tasks.remove(task);
+      return true;
+    }
+    return false;
   }
  
 }

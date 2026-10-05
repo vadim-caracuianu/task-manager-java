@@ -37,7 +37,8 @@ public class Task {
   }
 
   public String toString() {
-    return id + " | " + title + " | " + description + " | " + completed;
+    String status = completed ? "[V]" : "[ ]"; 
+    return id + " | " + title + " | " + description + " | " + status;
   }
 
   public int getId() {
